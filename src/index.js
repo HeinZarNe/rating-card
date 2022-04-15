@@ -4,7 +4,7 @@ import App from "./App";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-const reducer = (state = [1, 2, 3], action) => {
+const reducer = (state = [1], action) => {
   if (action.type === "CHANGE") {
     state = action.item;
   }
