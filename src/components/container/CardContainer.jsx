@@ -11,7 +11,7 @@ export const CardContainer = styled(Container)`
   flex-direction: column;
   padding: 25px;
   @media (max-width: 500px) {
-    width: 300px;
-    height: 300px;
+    width: 257px;
+    height: 327px;
   }
 `;
