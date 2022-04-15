@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Thank } from "./Thank";
+import { createGlobalStyle } from "styled-components";
+import { Provider } from "react-redux";
+import Main from "./Main";
+const GlobalStyle = createGlobalStyle`
+
+  * {
+  box-sizing: border-box;
+  }
+
+  body {
+    --White : hsl(0, 0%, 100%);
+    --LightGrey : hsl(217, 12%, 63%);
+    --MediumGrey : hsl(216, 12%, 54%);
+    --DarkBlue : hsl(213, 19%, 18%);
+    --VeryDarkBlue : hsl(216, 12%, 8%);
+    --Orange : hsl(25, 97%, 53%);
+    --MediumBlue:#293851;
+    font-family : 'Overpass', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/thankyou" element={<Thank />} />
+        </Routes>{" "}
+      </BrowserRouter>
+    </>
   );
 }
 
